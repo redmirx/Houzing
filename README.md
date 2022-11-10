@@ -1,6 +1,6 @@
 # Getting Started with WebBrain Academy
 
-This project is availabe on [Create React App](https://github.com/redmirx/houzing).
+This project is availabe on github [Housing](https://github.com/redmirx/houzing).
 
 # Can see the DEMO
 
