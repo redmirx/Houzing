@@ -5,12 +5,10 @@ import { NavLink } from "react-router-dom";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
 `;
 
 const Main = styled.div`
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   background-color: var(--colorPrimary);
 `;
