@@ -22,10 +22,9 @@ const Navbar = () => {
             <LogoText>Houzing</LogoText>
           </Content>
           <Content>
-            {navbar.map(({ title, path }, index) => {
-              // console.log(id);
+            {navbar.map(({ title, path, id }) => {
               return (
-                <Link key={index} to={path}>
+                <Link key={id} to={path}>
                   {title}
                 </Link>
               );
