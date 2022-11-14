@@ -10,6 +10,7 @@ import {
 } from "./style";
 import { Outlet, useNavigate } from "react-router-dom";
 import { navbar } from "./../../utils/navbar";
+import { Button } from "./../Generics";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -22,16 +23,20 @@ const Navbar = () => {
             <LogoText>Houzing</LogoText>
           </Content>
           <Content>
-            {navbar.map(({ title, path, id }) => {
+            {navbar.map(({ title, path, id, hidden }) => {
               return (
-                <Link key={id} to={path}>
-                  {title}
-                </Link>
+                !hidden && (
+                  <Link key={id} to={path}>
+                    {title}
+                  </Link>
+                )
               );
             })}
           </Content>
           <Content>
-            <button>Login</button>
+            <Button onClick={() => navigate("/signin")} type={"dark"}>
+              Login
+            </Button>
           </Content>
         </Wrapper>
       </Main>
