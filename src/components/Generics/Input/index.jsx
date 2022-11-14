@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "./style";
+import { Container, Wrapper, Icon } from "./style";
 
 const Input = ({
   type,
@@ -11,19 +11,24 @@ const Input = ({
   name,
   value,
   defaultValue,
+  icon,
 }) => {
   return (
-    <Container
-      type={type}
-      height={height}
-      width={width}
-      fontSize={fontSize}
-      onChange={onChange}
-      placeholder={placeholder}
-      name={name}
-      value={value}
-      defaultValue={defaultValue}
-    />
+    <Wrapper>
+      <Icon>{icon}</Icon>
+      <Container
+        type={type}
+        height={height}
+        width={width}
+        fontSize={fontSize}
+        onChange={onChange}
+        placeholder={placeholder}
+        name={name}
+        value={value}
+        defaultValue={defaultValue}
+        icon={icon}
+      />
+    </Wrapper>
   );
 };
 

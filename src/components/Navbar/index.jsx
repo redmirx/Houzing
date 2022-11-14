@@ -11,6 +11,7 @@ import {
 import { Outlet, useNavigate } from "react-router-dom";
 import { navbar } from "./../../utils/navbar";
 import { Button } from "./../Generics";
+import Filter from "./../Filter";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ const Navbar = () => {
           </Content>
         </Wrapper>
       </Main>
+      <Filter />
       <Outlet />
     </Container>
   );

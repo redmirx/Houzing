@@ -34,7 +34,7 @@ const Container = styled.button`
   justify-content: center;
   align-items: center;
   border-radius: 2px;
-  /* min-width: 120px; */
+  min-width: 12rem;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}rem` : "1.4rem")};
   width: ${({ width }) => (width ? `${width}rem` : `12.8rem`)};
   height: ${({ height }) => (height ? `${height}rem` : `4.4rem`)};

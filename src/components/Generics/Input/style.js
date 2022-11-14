@@ -40,7 +40,21 @@ const Container = styled.input`
   width: ${({ width }) => (width ? `${width}rem` : `100%`)};
   height: ${({ height }) => (height ? `${height}rem` : `4.4rem`)};
   outline: none;
+  padding-left: ${({ icon }) => (icon ? "4rem" : "2rem")};
   /* ${getType} */
 `;
 
-export { Container };
+const Wrapper = styled.div`
+  position: relative;
+  width: 100%;
+  background-color: yellow;
+`;
+const Icon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+`;
+export { Container, Wrapper, Icon };
