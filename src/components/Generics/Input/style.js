@@ -57,4 +57,5 @@ const Icon = styled.div`
   top: 50%;
   transform: translate(0, -50%);
 `;
+
 export { Container, Wrapper, Icon };

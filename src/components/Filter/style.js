@@ -26,4 +26,18 @@ Icons.Filter = styled(filter)`
   margin-right: 0.8rem;
 `;
 
-export { Container, Icons };
+const MenuWrapper = styled.div`
+  padding: 3rem;
+  border: 1px solid #e6e9ec;
+  background-color: skyblue;
+  /* border */
+`;
+const Section = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+`;
+
+export { Container, Icons, MenuWrapper, Section };
