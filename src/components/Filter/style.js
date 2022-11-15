@@ -29,12 +29,11 @@ Icons.Filter = styled(filter)`
 const MenuWrapper = styled.div`
   padding: 3rem;
   border: 1px solid #e6e9ec;
-  background-color: skyblue;
-  /* border */
+  border-radius: 5px;
 `;
 const Section = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   gap: 2rem;
   margin-bottom: 2rem;
