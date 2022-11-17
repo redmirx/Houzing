@@ -30,6 +30,7 @@ const MenuWrapper = styled.div`
   padding: 3rem;
   border: 1px solid #e6e9ec;
   border-radius: 5px;
+  background-color: #fff;
 `;
 const Section = styled.div`
   display: flex;

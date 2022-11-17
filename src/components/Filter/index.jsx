@@ -36,11 +36,11 @@ const Filter = () => {
           <Input ref={maxPriceRef} placeholder="Max price" />
         </Section>
 
-        <h1 className="subTitle">Footer</h1>
+        {/* <h1 className="subTitle">Footer</h1>
         <Section>
           <Button type={"light"}>Cancel</Button>
           <Button type={"primary"}>Submit</Button>
-        </Section>
+        </Section> */}
       </MenuWrapper>
     );
   };
@@ -55,6 +55,7 @@ const Filter = () => {
         dropdownRender={menu}
         placement="bottomRight"
         arrow={{ pointAtCenter: true }}
+        trigger={["click"]}
       >
         <div>
           <Button type={"light"} width={14}>
