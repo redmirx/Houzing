@@ -46,3 +46,10 @@ default font-size: 16px
   line-height: 2.4rem;
   color: #0d263b;
 }
+
+.info {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #696969;
+}

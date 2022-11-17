@@ -1,13 +1,13 @@
 import React from "react";
 import { Container } from "./style";
 import CarouselSection from "./../Carousel/index";
+import HouseCard from "../HouseCard";
 
 const Home = () => {
   return (
     <Container>
-      {/* <Input placeholder={"test"} /> */}
-      {/* <h1>Home</h1> */}
       <CarouselSection />
+      <HouseCard />
     </Container>
   );
 };
