@@ -14,7 +14,7 @@ const Container = styled.div`
     drop-shadow(0px 0.8rem 1.5rem rgba(0, 0, 0, 0.06));
   border: 1px solid #e6e9ec;
   border-radius: 3px;
-  margin: 50px;
+  /* margin: 10px; */
 `;
 
 const Image = styled.img`

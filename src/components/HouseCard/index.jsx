@@ -10,7 +10,21 @@ import {
 } from "./style";
 import noimg from "./../../assets/images/no-img.jpg";
 
-const HouseCard = ({ url, title, address, bed, bath, garage, size }) => {
+// url, title, address, bed, bath, garage, size prev props
+const HouseCard = ({ data }) => {
+  console.log(data);
+
+  const {
+    url,
+    title = 0,
+    address = 0,
+    city,
+    country,
+    description,
+    houseDetails: { beds: bed, bath, garage, area },
+    price,
+    salePrice,
+  } = data;
   return (
     <Container>
       <Image src={url || noimg} />
@@ -36,15 +50,15 @@ const HouseCard = ({ url, title, address, bed, bath, garage, size }) => {
           </Details.Item>
           <Details.Item>
             <Icons.Ruler />
-            <div className="info">{size || 0} Sq Ft</div>
+            <div className="info">{area || 0} Sq Ft</div>
           </Details.Item>
         </Details>
       </Content>
       <Footer>
         <Details footer>
           <Details.Item footer>
-            <div className="info">$2,800/mo</div>
-            <div className="subTitle">$7,500/mo</div>
+            <div className="info">{`$${price || "2,800"}/mo`}</div>
+            <div className="subTitle">{`$${salePrice || "7,500"}/mo`}</div>
           </Details.Item>
           <Details.Item row>
             <Icons.Resize />
