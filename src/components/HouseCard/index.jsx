@@ -15,12 +15,12 @@ const HouseCard = ({ data }) => {
   console.log(data);
 
   const {
-    url,
+    url = 0,
     title = 0,
     address = 0,
-    city,
-    country,
-    description,
+    // city,
+    // country,
+    // description,
     houseDetails: { beds: bed, bath, garage, area },
     price,
     salePrice,
