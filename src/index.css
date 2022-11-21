@@ -53,3 +53,9 @@ default font-size: 16px
   line-height: 2rem;
   color: #696969;
 }
+
+.inline {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}

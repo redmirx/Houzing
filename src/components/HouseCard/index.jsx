@@ -12,27 +12,30 @@ import noimg from "./../../assets/images/no-img.jpg";
 
 // url, title, address, bed, bath, garage, size prev props
 const HouseCard = ({ data }) => {
-  console.log(data);
+  // console.log(data);
 
   const {
-    url = 0,
-    title = 0,
-    address = 0,
-    // city,
-    // country,
-    // description,
+    attachments,
+    description,
+    region,
+    city,
+    country,
     houseDetails: { beds: bed, bath, garage, area },
     price,
     salePrice,
   } = data;
+
+  const url = attachments[0]?.imgPath;
   return (
     <Container>
-      <Image src={url || noimg} />
+      <Image src={url !== "string" ? url : noimg} />
       <Content>
         <Address>
-          <div className="subTitle">{title || "New Apartment Nice Wiew"}</div>
+          <div className="subTitle inline">
+            {description || "New Apartment Nice Wiew"}
+          </div>
           <div className="info">
-            {address || "Quincy St, Brooklyn, NY, USA"}
+            {`${region}, ${city}, ${country}` || "Quincy St, Brooklyn, NY, USA"}
           </div>
         </Address>
         <Details>
