@@ -1,10 +1,25 @@
-import { HomePage } from "./../pages/Home";
-import { PropertiesPage } from "./../pages/Properties";
 // import useUniqueID from "./../hooks/useID.jsx";
+import { React, lazy, Suspense } from "react";
+import { Loading } from "./style";
+
+// Static import
+// import { HomePage } from "./../pages/Home";
+// import {PropertiesPage} from "./../pages/Properties";
+
+// Dynamic import
+const HomePage = lazy(() => import("./../pages/Home"));
+const PropertiesPage = lazy(() => import("./../pages/Properties"));
+
+// const loading = <Fragment>Loading...</Fragment>;
+
 export const navbar = [
   {
     id: 1,
-    element: <HomePage />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <HomePage />
+      </Suspense>
+    ),
     title: "Home",
     path: "/home",
     private: false,
@@ -12,7 +27,11 @@ export const navbar = [
   },
   {
     id: 2,
-    element: <PropertiesPage />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <PropertiesPage />
+      </Suspense>
+    ),
     title: "Properties",
     path: "/properties",
     private: false,
