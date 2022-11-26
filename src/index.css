@@ -42,6 +42,7 @@ default font-size: 16px
 
 .subTitle {
   font-style: normal;
+  font-size: 1.6rem;
   font-weight: 600;
   line-height: 2.4rem;
   color: #0d263b;
@@ -58,4 +59,8 @@ default font-size: 16px
   display: flex;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.slick-dots-bottom {
+  width: inherit !important;
 }
