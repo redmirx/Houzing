@@ -23,6 +23,7 @@ const Filter = () => {
       .then((res) => {
         setData(res?.data || []);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -32,7 +33,7 @@ const Filter = () => {
     firstIndex?.name && setCategoryName(firstIndex?.name);
 
     !query.get("category_id") && setCategoryName("Select Category");
-    // console.log(!query.get("category_id"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location?.search, data]);
 
   const countryRef = useRef();
