@@ -20,11 +20,11 @@ const HouseCard = ({ data }) => {
     region,
     city,
     country,
-    houseDetails: { beds: bed, bath, garage, area },
+    houseDetails: { beds: bed, bath, garage, area, room },
     price,
     salePrice,
+    category,
   } = data;
-
   const url = attachments[0]?.imgPath;
   return (
     <Container>
@@ -32,10 +32,12 @@ const HouseCard = ({ data }) => {
       <Content>
         <Address>
           <div className="subTitle inline">
-            {description || "New Apartment Nice Wiew"}
+            {`${description} ${category?.name || "Category"}` ||
+              "New Apartment Nice Wiew"}
           </div>
-          <div className="info">
-            {`${region}, ${city}, ${country}` || "Quincy St, Brooklyn, NY, USA"}
+          <div className="info inline">
+            {`${region}, ${city}, ${country} - Room(s) ${room}` ||
+              "Quincy St, Brooklyn, NY, USA"}
           </div>
         </Address>
         <Details>

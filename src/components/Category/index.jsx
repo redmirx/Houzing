@@ -43,7 +43,7 @@ const Category = () => {
           (value, index) =>
             value.name !== "string" && (
               <CategoryCard
-                onClick={() => navigate(`/properties?category=${value?.name}`)}
+                onClick={() => navigate(`/properties?category_id=${value?.id}`)}
                 key={value.id}
                 data={value}
                 image={CategoryImages.at(index)}

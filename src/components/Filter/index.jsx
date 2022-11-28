@@ -1,29 +1,64 @@
-import React, { useRef } from "react";
-import { Container, Icons, MenuWrapper, Section } from "./style";
+import React, { useRef, useState, useEffect } from "react";
+import { Container, Icons, MenuWrapper, Section, SelectAnt } from "./style";
 import { Input, Button } from "../Generics";
 import { Dropdown } from "antd";
 import UseReplace from "./../../hooks/UseReplace";
 import useSearch from "./../../hooks/useSearch";
 import { useNavigate, useLocation } from "react-router-dom";
 
+const { REACT_APP_BASE_URL: url } = process.env;
+
 const Filter = () => {
+  const [data, setData] = useState([]);
+  const reversedData = [...data].reverse();
+  const [categoryName, setCategoryName] = useState("Select Category");
+
   const navigate = useNavigate();
   const location = useLocation();
   const query = useSearch();
+
+  useEffect(() => {
+    fetch(`${url}/categories/list`)
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res?.data || []);
+      });
+  }, []);
+
+  useEffect(() => {
+    let [firstIndex] = data.filter(
+      (ctg) => ctg.id === Number(query.get("category_id"))
+    );
+    firstIndex?.name && setCategoryName(firstIndex?.name);
+
+    !query.get("category_id") && setCategoryName("Select Category");
+    // console.log(!query.get("category_id"));
+  }, [location?.search, data]);
 
   const countryRef = useRef();
   const regionRef = useRef();
   const cityRef = useRef();
   const zipCodeRef = useRef();
+
   const roomsRef = useRef();
-  const sizeRef = useRef();
-  const sortRef = useRef();
+  // const sizeRef = useRef();
+  // const sortRef = useRef();
+
   const minPriceRef = useRef();
   const maxPriceRef = useRef();
 
   const onChange = ({ target: { name, value } }) => {
     navigate(`${location?.pathname}${UseReplace(name, value)}`);
   };
+
+  const onChangeCategory = (category_id) => {
+    navigate(`/properties/${UseReplace("category_id", category_id)}`);
+  };
+
+  const onSort = (sort) => {
+    navigate(`properties/${UseReplace("sort", sort)}`);
+  };
+
   const menu = () => {
     return (
       <MenuWrapper>
@@ -65,22 +100,30 @@ const Filter = () => {
             onChange={onChange}
             ref={roomsRef}
             name="room"
+            type="number"
             placeholder="Rooms"
           />
-          <Input
-            defaultValue={query.get("size")}
-            onChange={onChange}
-            ref={sizeRef}
-            name="size"
-            placeholder="Size"
-          />
-          <Input
-            defaultValue={query.get("sort")}
-            onChange={onChange}
-            ref={sortRef}
-            name="sort"
-            placeholder="Sort"
-          />
+          <SelectAnt value={query.get("sort") || "Sort"} onChange={onSort}>
+            <SelectAnt.Option value={""}>Sort</SelectAnt.Option>
+            <SelectAnt.Option value={"asc"}>ascending</SelectAnt.Option>
+            <SelectAnt.Option value={"desc"}>descending</SelectAnt.Option>
+          </SelectAnt>
+          <SelectAnt
+            value={categoryName}
+            // defaultValue={categoryName}
+            onChange={onChangeCategory}
+          >
+            <SelectAnt.Option value={""}>Select Category</SelectAnt.Option>;
+            {reversedData.map((value) => {
+              return (
+                value.name !== "string" && (
+                  <SelectAnt.Option key={value.id} value={value.id}>
+                    {value.name.toLowerCase()}
+                  </SelectAnt.Option>
+                )
+              );
+            })}
+          </SelectAnt>
         </Section>
         <h1 className="subTitle">Price</h1>
         <Section>
