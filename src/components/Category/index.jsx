@@ -34,7 +34,7 @@ const Category = () => {
     <Container>
       <Content>
         <div className="title">Category</div>
-        <div className="subTitle">
+        <div className="subTitleLight">
           Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
         </div>
       </Content>

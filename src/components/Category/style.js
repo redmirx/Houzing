@@ -5,6 +5,23 @@ const Container = styled.div`
   max-width: 144rem;
   margin: 0 auto;
   padding: 9.6rem 13rem;
+  overflow: hidden;
+  /* background-color: springgreen; */
+  .slick-dots li button:before {
+    opacity: 0.25;
+    color: #0061df;
+    line-height: 0;
+    padding-top: 3.2rem;
+  }
+  .slick-dots li.slick-active button:before {
+    opacity: 0.9;
+  }
+  .slick-slider {
+  }
+
+  .slick-list {
+    /* overflow: visible; */
+  }
 `;
 
 const Content = styled.div`

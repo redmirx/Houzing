@@ -11,6 +11,12 @@ const Container = styled.div`
   border-radius: 0.3rem;
   overflow: hidden;
   cursor: pointer;
+  transition: 0.5s;
+  :active {
+    transform: scale(0.9);
+    transition: 0.4s;
+    z-index: 10;
+  }
 `;
 
 const Blur = styled.div`
@@ -19,7 +25,8 @@ const Blur = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  transition: 0.5s;
+  ${({ blur }) => blur && "background-color: rgba(0, 0, 0, 0.7)"};
 `;
 
 const Content = styled.div`

@@ -48,6 +48,14 @@ default font-size: 16px
   color: #0d263b;
 }
 
+.subTitleLight {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #696969;
+}
+
 .info {
   font-weight: 400;
   font-size: 1.4rem;

@@ -9,12 +9,15 @@ import { ReactComponent as heart } from "./../../assets/icons/heart.svg";
 const Container = styled.div`
   width: 38rem;
   height: 42.9rem;
-  filter: drop-shadow(0px 2rem 3.8rem rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 0.7rem 4.6rem rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 0.8rem 1.5rem rgba(0, 0, 0, 0.06));
   border: 1px solid #e6e9ec;
   border-radius: 3px;
-  /* margin: 10px; */
+  transition: 0.6s;
+  cursor: pointer;
+  :hover {
+    filter: drop-shadow(0px 2rem 3.8rem rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 0.7rem 4.6rem rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 0.8rem 1.5rem rgba(0, 0, 0, 0.06));
+  }
 `;
 
 const Image = styled.img`

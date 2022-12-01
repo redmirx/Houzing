@@ -31,11 +31,14 @@ const VillaIcon = styled(villaIcon)`
   height: 6rem;
 `;
 
+const noImg = "";
+
 export const CategoryIcons = [
   <OfficeIcon />,
   <ApartmentIcon />,
   <HouseIcon />,
+  noImg,
   <VillaIcon />,
 ];
 
-export const CategoryImages = [office, apartment, house, villa];
+export const CategoryImages = [office, apartment, house, noImg, villa];
