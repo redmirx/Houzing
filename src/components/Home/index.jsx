@@ -6,6 +6,7 @@ import Recommended from "./../Recommended";
 import WhyChooseUs from "./../Why";
 import Banner from "./../Banner/index";
 import Testimonials from "../Testimonials";
+import Footer from "./../Footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Category />
       <Banner />
       <Testimonials />
+      <Footer />
     </Container>
   );
 };
