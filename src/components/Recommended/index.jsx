@@ -21,8 +21,21 @@ const settings = {
 };
 
 const Recommended = () => {
+  // const slider = useRef(); // demo
   const [data, setData] = useState([]);
   // const navigate = useNavigate();
+
+  // const onMove = (event) => {
+  //   switch (event) {
+  //     case "left":
+  //       return slider.current.prev();
+  //     case "right":
+  //       return slider.current.next();
+  //     default:
+  //       return null;
+  //   }
+  // };
+
   useEffect(() => {
     fetch(`${url}/houses/list`)
       .then((res) => res.json())

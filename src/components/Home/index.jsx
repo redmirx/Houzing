@@ -4,6 +4,8 @@ import CarouselSection from "./../Carousel";
 import Category from "./../Category";
 import Recommended from "./../Recommended";
 import WhyChooseUs from "./../Why";
+import Banner from "./../Banner/index";
+import Testimonials from "../Testimonials";
 
 const Home = () => {
   return (
@@ -12,6 +14,8 @@ const Home = () => {
       <Recommended />
       <WhyChooseUs />
       <Category />
+      <Banner />
+      <Testimonials />
     </Container>
   );
 };
