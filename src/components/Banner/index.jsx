@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Image, Blur, Content } from "./style";
 import house from "./../../assets/images/house2.png";
 import Button from "./../Generics/Button";
 
 const Banner = () => {
+  const [zoom, setZoom] = useState(false);
   return (
-    <Container>
-      <Image src={house} />
+    <Container
+      onMouseEnter={() => setZoom(true)}
+      onMouseLeave={() => setZoom(false)}
+    >
+      <Image src={house} zoom={zoom} />
       <Blur />
       <Content>
         <div className="title">

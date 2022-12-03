@@ -35,6 +35,10 @@ const Image = styled.img`
   left: 50%;
   bottom: 0;
   transform: translate(-50%, 50%);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(13, 38, 59, 0.2);
+  z-index: 100;
 `;
 
 const Author = styled.div`

@@ -1,5 +1,3 @@
-/* eslint-disable-next-line jsx-a11y/anchor-is-valid */
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -23,7 +21,7 @@ const Footer = () => {
             <Content.Title>Contact Us</Content.Title>
             <Content.Link>
               <Icons.Pin />
-              <a className="address">
+              <a href="/" className="address">
                 329 Queensberry Street, North Melbourne VIC 3051, Australia.
               </a>
             </Content.Link>
@@ -36,16 +34,32 @@ const Footer = () => {
               <a href="mailto: support@houzing.com">support@houzing.com</a>
             </Content.Link>
             <Icons>
-              <a href="https://www.facebook.com/" target="_blank">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Icons.Facebook />
               </a>
-              <a href="https://www.skype.com/" target="_blank">
+              <a
+                href="https://www.skype.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Icons.Skype />
               </a>
-              <a href="https://www.instagram.com/" target="_blank">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Icons.Instagram />
               </a>
-              <a href="https://www.linkedin.com/" target="_blank">
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Icons.LinkedIn />
               </a>
             </Icons>
@@ -53,52 +67,52 @@ const Footer = () => {
           <Content>
             <Content.Title>Discover</Content.Title>
             <Content.Link>
-              <a>Chicago</a>
+              <a href="/">Chicago</a>
             </Content.Link>
             <Content.Link>
-              <a>Los Angeles</a>
+              <a href="/">Los Angeles</a>
             </Content.Link>
             <Content.Link>
-              <a>Miami</a>
+              <a href="/">Miami</a>
             </Content.Link>
             <Content.Link>
-              <a>New York</a>
+              <a href="/">New York</a>
             </Content.Link>
           </Content>
           <Content>
             <Content.Title>List by Category</Content.Title>
             <Content.Link>
-              <a>Apartments</a>
+              <a href="/">Apartments</a>
             </Content.Link>
             <Content.Link>
-              <a>Condos</a>
+              <a href="/">Condos</a>
             </Content.Link>
             <Content.Link>
-              <a>Houses</a>
+              <a href="/">Houses</a>
             </Content.Link>
             <Content.Link>
-              <a>Offices</a>
+              <a href="/">Offices</a>
             </Content.Link>
             <Content.Link>
-              <a>Retail</a>
+              <a href="/">Retail</a>
             </Content.Link>
             <Content.Link>
-              <a>Villas</a>
+              <a href="/">Villas</a>
             </Content.Link>
           </Content>
           <Content>
             <Content.Title>Lists by Category</Content.Title>
             <Content.Link>
-              <a>About Us</a>
+              <a href="/">About Us</a>
             </Content.Link>
             <Content.Link>
-              <a>Terms & Conditions</a>
+              <a href="/">Terms & Conditions</a>
             </Content.Link>
             <Content.Link>
-              <a>Support Center</a>
+              <a href="/">Support Center</a>
             </Content.Link>
             <Content.Link>
-              <a>Contact Us</a>
+              <a href="/">Contact Us</a>
             </Content.Link>
           </Content>
         </Links>

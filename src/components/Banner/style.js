@@ -3,11 +3,14 @@ import styled from "styled-components";
 const Container = styled.div`
   /* height: 57.1rem; */
   position: relative;
+  overflow: hidden;
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 100%;
+  transition: 2s;
+  ${({ zoom }) => zoom && "transform:scale(1.3)"};
 `;
 
 const Blur = styled.div`

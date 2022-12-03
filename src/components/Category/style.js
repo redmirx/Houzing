@@ -22,7 +22,6 @@ const Container = styled.div`
   .slick-list {
     /* overflow: visible; */
   }
-  background-color: salmon;
 `;
 
 const Content = styled.div`
