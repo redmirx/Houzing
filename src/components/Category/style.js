@@ -4,9 +4,10 @@ const Container = styled.div`
   width: 100%;
   max-width: 144rem;
   margin: 0 auto;
-  padding: 9.6rem 13rem;
+  padding: var(--padding);
+  padding-bottom: 13.6rem;
   overflow: hidden;
-  /* background-color: springgreen; */
+  background-color: springgreen;
   .slick-dots li button:before {
     opacity: 0.25;
     color: #0061df;

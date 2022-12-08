@@ -5,7 +5,6 @@ const Container = styled.div`
   background-color: #f5f7fc;
   margin-top: 8.8rem;
   padding: 4.8rem 0;
-  margin-bottom: 100px;
 `;
 
 const Content = styled.div`

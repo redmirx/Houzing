@@ -7,6 +7,7 @@ import { ReactComponent as map } from "./../../assets/icons/map.svg";
 const Container = styled.div`
   background-color: #f5f7fc;
   margin-top: 8.8rem;
+  margin-bottom: 9.6rem;
   padding: 4.8rem 0;
 `;
 
