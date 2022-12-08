@@ -7,6 +7,7 @@ import WhyChooseUs from "./../Why";
 import Banner from "./../Banner/index";
 import Testimonials from "../Testimonials";
 import Footer from "./../Footer";
+import RecentRents from "./../RecentRents";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <WhyChooseUs />
       <Category />
       <Banner />
+      <RecentRents />
       <Testimonials />
       <Footer />
     </Container>

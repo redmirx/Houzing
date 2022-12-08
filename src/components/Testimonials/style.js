@@ -5,13 +5,6 @@ const Container = styled.div`
   background-color: #f5f7fc;
   margin-top: 8.8rem;
   padding: 4.8rem 0;
-
-  .slick-prev:before,
-  .slick-next:before {
-    font-size: 20px;
-    color: black;
-    box-shadow: 0px 10px 50px rgba(13, 38, 59, 0.1);
-  }
   margin-bottom: 100px;
 `;
 

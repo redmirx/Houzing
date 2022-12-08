@@ -17,10 +17,9 @@ const settings = {
   autoplaySpeed: 500,
   easing: "linear",
   pauseOnHover: false,
-  // cssEase: "linear",
 };
 
-const Recommended = () => {
+const RecentRents = () => {
   const slider = useRef(); // demo
   const [data, setData] = useState([]);
   // const navigate = useNavigate();
@@ -45,7 +44,7 @@ const Recommended = () => {
   return (
     <Container>
       <Content>
-        <div className="title">Recommended</div>
+        <div className="title">Recent Properties for Rent</div>
         <div className="subTitleLight">
           Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
         </div>
@@ -65,4 +64,4 @@ const Recommended = () => {
   );
 };
 
-export default Recommended;
+export default RecentRents;
