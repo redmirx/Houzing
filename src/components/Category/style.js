@@ -7,7 +7,6 @@ const Container = styled.div`
   padding: var(--padding);
   padding-bottom: 13.6rem;
   overflow: hidden;
-  background-color: springgreen;
   .slick-dots li button:before {
     opacity: 0.25;
     color: #0061df;
