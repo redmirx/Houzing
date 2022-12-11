@@ -5,10 +5,12 @@ import { Loading } from "./style";
 // Static import
 // import { HomePage } from "./../pages/Home";
 // import {PropertiesPage} from "./../pages/Properties";
+import { SignInPage } from "./../pages/SignIn";
 
 // Dynamic import
 const HomePage = lazy(() => import("./../pages/Home"));
 const PropertiesPage = lazy(() => import("./../pages/Properties"));
+const HouseItemPage = lazy(() => import("./../pages/HouseItem"));
 
 // const loading = <Fragment>Loading...</Fragment>;
 
@@ -39,14 +41,26 @@ export const navbar = [
   },
   {
     id: 3,
-    element: <h1>Sign In</h1>,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <HouseItemPage />
+      </Suspense>
+    ),
+    title: "HouseItem",
+    path: `/properties/:id`,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: 4,
+    element: <SignInPage />,
     title: "Sign In",
     path: "/signin",
     private: false,
     hidden: true,
   },
   {
-    id: 4,
+    id: 5,
     element: <h1>Sign Up</h1>,
     title: "Sign Up",
     path: "/signup",

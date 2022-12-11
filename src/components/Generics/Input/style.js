@@ -41,6 +41,10 @@ const Container = styled.input`
   height: ${({ height }) => (height ? `${height}rem` : `4.4rem`)};
   outline: none;
   padding-left: ${({ icon }) => (icon ? "4rem" : "2rem")};
+  :focus {
+    border: 1px solid skyblue;
+    box-shadow: 0 0 1px 0.07px skyblue;
+  }
   /* ${getType} */
 `;
 

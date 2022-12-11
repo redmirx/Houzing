@@ -48,6 +48,7 @@ const Testimonials = () => {
           {TestimonialsNames.map(
             (value, index) => (
               <TestimonialsCard
+                key={index}
                 image={TestimonialsImages.at(index)}
                 name={TestimonialsNames.at(index)}
               />

@@ -23,7 +23,7 @@ const Cards = styled.div`
   flex-wrap: wrap;
   column-gap: 1.1rem;
   row-gap: 2rem;
-  margin-top: 9rem;
+  margin: 9rem 0;
 `;
 
 export { Container, Title, Cards };

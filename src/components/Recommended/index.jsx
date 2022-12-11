@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HouseCard from "./../HouseCard/index";
 import { Container, Content, Arrow } from "./style";
 
@@ -23,7 +23,7 @@ const settings = {
 const Recommended = () => {
   const slider = useRef(); // demo
   const [data, setData] = useState([]);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onMove = (event) => {
     switch (event) {
@@ -53,7 +53,7 @@ const Recommended = () => {
       <Slider {...settings} ref={slider}>
         {data.map((value) => (
           <HouseCard
-            // onClick={() => navigate(`/properties?category_id=${value?.id}`)}
+            onClick={() => navigate(`/properties/${value.id}`)}
             key={value.id}
             data={value}
           />

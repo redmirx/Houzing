@@ -29,6 +29,16 @@ const getType = ({ type }) => {
   }
 };
 
+const getWidth = (width) => {
+  if (width === "%") {
+    return "100%";
+  } else if (width) {
+    return `${width}rem`;
+  } else {
+    return "12.8rem";
+  }
+};
+
 const Container = styled.button`
   display: flex;
   justify-content: center;
@@ -36,7 +46,7 @@ const Container = styled.button`
   border-radius: 2px;
   min-width: 12rem;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}rem` : "1.4rem")};
-  width: ${({ width }) => (width ? `${width}rem` : `12.8rem`)};
+  width: ${({ width }) => getWidth(width)};
   height: ${({ height }) => (height ? `${height}rem` : `4.4rem`)};
   ${getType}
   cursor: pointer;

@@ -12,6 +12,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { navbar } from "./../../utils/navbar";
 import { Button } from "./../Generics";
 import Filter from "./../Filter";
+import Footer from "./../Footer/index";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ const Navbar = () => {
       </Main>
       <Filter />
       <Outlet />
+      <Footer />
     </Container>
   );
 };

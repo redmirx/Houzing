@@ -11,7 +11,7 @@ import {
 import noimg from "./../../assets/images/no-img.jpg";
 
 // url, title, address, bed, bath, garage, size prev props
-const HouseCard = ({ data }) => {
+const HouseCard = ({ data, onClick }) => {
   // console.log(data);
 
   const {
@@ -27,7 +27,7 @@ const HouseCard = ({ data }) => {
   } = data;
   const url = attachments[0]?.imgPath;
   return (
-    <Container>
+    <Container onClick={onClick}>
       <Image src={url !== "string" ? url : noimg} />
       <Content>
         <Address>
