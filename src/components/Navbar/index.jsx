@@ -8,7 +8,7 @@ import {
   Link,
   Main,
 } from "./style";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { navbar } from "./../../utils/navbar";
 import { Button } from "./../Generics";
 import Filter from "./../Filter";
@@ -42,7 +42,7 @@ const Navbar = () => {
           </Content>
         </Wrapper>
       </Main>
-      <Filter />
+      {useLocation().pathname !== "/signin" && <Filter />}
       <Outlet />
       <Footer />
     </Container>
