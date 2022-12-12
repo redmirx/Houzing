@@ -13,8 +13,8 @@ const HouseItem = () => {
       // console.log(res);
       setData(res?.data);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params?.id]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
 
   return (
     <Container>
