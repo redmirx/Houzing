@@ -62,7 +62,10 @@ const HouseCard = ({ data, onClick }) => {
       <Footer>
         <Details footer>
           <Details.Item footer>
-            <div className="info">{`$${price || "2,800"}/mo`}</div>
+            <div
+              className="info"
+              style={{ textDecoration: "line-through" }}
+            >{`$${price || "2,800"}/mo`}</div>
             <div className="subTitle">{`$${salePrice || "7,500"}/mo`}</div>
           </Details.Item>
           <Details.Item row>
