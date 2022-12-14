@@ -11,7 +11,7 @@ const Container = styled.div`
   height: 42.9rem;
   border: 1px solid #e6e9ec;
   border-radius: 3px;
-  transition: 0.6s;
+  /* transition: 0.6s; */
   cursor: pointer;
   :hover {
     filter: drop-shadow(0px 2rem 3.8rem rgba(0, 0, 0, 0.06))

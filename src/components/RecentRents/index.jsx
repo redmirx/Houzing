@@ -19,7 +19,7 @@ const settings = {
   pauseOnHover: false,
 };
 
-const RecentRents = () => {
+const RecentRents = ({ title }) => {
   const slider = useRef(); // demo
   const [data, setData] = useState([]);
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ const RecentRents = () => {
   return (
     <Container>
       <Content>
-        <div className="title">Recent Properties for Rent</div>
+        <div className="title">{title || "Recent Properties for Rent"}</div>
         <div className="subTitleLight">
           Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
         </div>

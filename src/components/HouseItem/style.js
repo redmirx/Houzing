@@ -7,11 +7,18 @@ import { ReactComponent as car } from "./../../assets/icons/car.svg";
 import { ReactComponent as ruler } from "./../../assets/icons/ruler.svg";
 import { ReactComponent as calendar } from "./../../assets/icons/calendar.svg";
 const Container = styled.div`
+  background-color: limegreen;
   max-width: 144rem;
   width: 100%;
-  padding: var(--padding);
+  /* padding: var(--padding); */
   margin: auto;
-  background-color: limegreen;
+  padding-bottom: 13.6rem;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  gap: 2rem;
+  padding: var(--padding);
 `;
 
 const Section = styled.div`
@@ -90,4 +97,42 @@ Content.SubTitle = styled.div`
   color: #0d263b;
 `;
 
-export { Container, Section, Content, Icons, Details, Price };
+const Seller = styled.div`
+  flex: 3;
+`;
+const Client = styled.div`
+  flex: 1;
+  max-width: 28.6rem;
+  height: 47.6rem;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.9rem;
+  border: 1px solid #e6e9ec;
+  border-radius: 3px;
+  /* background: #ffffff; */
+  background-color: orange;
+`;
+const UserImg = styled.img`
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 50%;
+`;
+
+const Map = styled.div`
+  padding: var(--padding);
+`;
+
+export {
+  Container,
+  Wrapper,
+  Section,
+  Content,
+  Icons,
+  Details,
+  Price,
+  Seller,
+  Client,
+  UserImg,
+  Map,
+};
