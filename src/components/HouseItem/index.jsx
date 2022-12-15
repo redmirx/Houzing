@@ -17,7 +17,7 @@ import {
 import noUser from "./../../assets/images/noUser.jpeg";
 import { Input, Button } from "./../Generics";
 import { Checkbox } from "antd";
-// import Yandex from "./../Generics/Yandex";
+import Yandex from "./../Generics/Yandex";
 import RecentRents from "./../RecentRents/index";
 const HouseItem = () => {
   const [data, setData] = useState();
@@ -129,7 +129,7 @@ const HouseItem = () => {
         </Client>
       </Wrapper>
       <Map>
-        {/* <Yandex /> */}
+        <Yandex />
       </Map>
       <RecentRents title="Similar listings" />
     </Container>
