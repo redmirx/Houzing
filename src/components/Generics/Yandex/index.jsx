@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line react-hooks/exhaustive-deps
 import { YMaps, Map } from "react-yandex-maps";
 const mapStyle = {
   position: "relative",
@@ -11,8 +12,11 @@ const mapStyle = {
 
 const Yandex = ({ center }) => {
   return (
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+
     <YMaps
       query={{ apikey: "afbb60c1-0761-48a5-b821-b566bf220d8b", lang: "EN" }}
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     >
       <Map
         style={mapStyle}

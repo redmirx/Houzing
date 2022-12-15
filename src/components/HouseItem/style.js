@@ -107,7 +107,8 @@ const Client = styled.div`
   padding: 2.4rem;
   display: flex;
   flex-direction: column;
-  gap: 1.9rem;
+  /* gap: 1.9rem; */
+  justify-content: space-between;
   border: 1px solid #e6e9ec;
   border-radius: 3px;
   /* background: #ffffff; */
