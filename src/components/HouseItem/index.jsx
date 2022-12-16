@@ -19,6 +19,7 @@ import { Input, Button } from "./../Generics";
 import { Checkbox } from "antd";
 import Yandex from "./../Generics/Yandex";
 import RecentRents from "./../RecentRents/index";
+import ImageGallery from "./../ImageGallery";
 const HouseItem = () => {
   const [data, setData] = useState();
   const params = useParams();
@@ -32,6 +33,7 @@ const HouseItem = () => {
 
   return (
     <Container>
+      <ImageGallery images={data?.attachments} />
       <Wrapper>
         <Seller>
           <Section>
@@ -85,8 +87,11 @@ const HouseItem = () => {
             </Details>
             <Details flex="column" gap={0.4}>
               <Details.Item align="center">
-                <Price>{`$${data?.price}/mo`}</Price>
-                <Price.Sale>{`$${data?.salePrice}/mo`}</Price.Sale>
+                <Price>{`$${String(data?.price).slice(0, 5)}/mo`}</Price>
+                <Price.Sale>{`$${String(data?.salePrice).slice(
+                  0,
+                  5
+                )}/mo`}</Price.Sale>
               </Details.Item>
               <div className="info" style={{ textAlign: "end" }}>
                 {data?.user?.firstname}

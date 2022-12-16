@@ -16,6 +16,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+  max-width: 144rem;
   display: flex;
   gap: 2rem;
   padding: var(--padding);
@@ -102,7 +103,7 @@ const Seller = styled.div`
 `;
 const Client = styled.div`
   flex: 1;
-  max-width: 28.6rem;
+  max-width: 28rem;
   height: 47.6rem;
   padding: 2.4rem;
   display: flex;
