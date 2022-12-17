@@ -32,6 +32,7 @@ const SignIn = () => {
     request({ me: true, url: "/public/auth/login", method: "POST", body }).then(
       (res) => {
         if (res?.authenticationToken) {
+          localStorage.setItem("token", res?.authenticationToken);
           navigate("/home");
           success();
         } else {

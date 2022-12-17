@@ -11,6 +11,7 @@ import { SignInPage } from "./../pages/SignIn";
 const HomePage = lazy(() => import("./../pages/Home"));
 const PropertiesPage = lazy(() => import("./../pages/Properties"));
 const HouseItemPage = lazy(() => import("./../pages/HouseItem"));
+const FavouritesPage = lazy(() => import("./../pages/Favourite"));
 
 // const loading = <Fragment>Loading...</Fragment>;
 
@@ -53,6 +54,18 @@ export const navbar = [
   },
   {
     id: 4,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <FavouritesPage />
+      </Suspense>
+    ),
+    title: "Favourites",
+    path: `/favourites`,
+    private: true,
+    hidden: true,
+  },
+  {
+    id: 5,
     element: <SignInPage />,
     title: "Sign In",
     path: "/signin",
@@ -60,7 +73,7 @@ export const navbar = [
     hidden: true,
   },
   {
-    id: 5,
+    id: 6,
     element: <h1>Sign Up</h1>,
     title: "Sign Up",
     path: "/signup",

@@ -55,4 +55,25 @@ const Link = styled(NavLink)`
   color: var(--colorPrimaryLight);
 `;
 
-export { Container, Wrapper, Content, Logo, LogoText, Link, Main };
+const Menu = styled.div`
+  width: 17.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 1.6rem;
+  background: #fff;
+  box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06),
+    0px 7px 46px rgba(0, 0, 0, 0.06), 0px 8px 15px rgba(0, 0, 0, 0.06);
+`;
+Menu.Text = styled.div`
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #000;
+  cursor: pointer;
+  :hover {
+    color: #0061df;
+  }
+`;
+
+export { Container, Wrapper, Content, Logo, LogoText, Link, Main, Menu };

@@ -63,14 +63,23 @@ Icons.Resize = styled(resize)`
   height: 3.5rem;
   padding: 1rem;
 `;
-Icons.Heart = styled(heart)`
+Icons.WrapperHeart = styled.div`
   width: 3.5rem;
   height: 3.5rem;
-  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
   cursor: pointer;
+  background-color: ${({ favourite }) => (favourite ? "#CC5040" : "#f6f8f9")};
   :active {
-    stroke: salmon;
     transform: scale(0.9);
+  }
+`;
+
+Icons.Heart = styled(heart)`
+  & path {
+    fill: ${({ favourite }) => (favourite ? "#fff" : "#696969")};
   }
 `;
 

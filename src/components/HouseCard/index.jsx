@@ -24,6 +24,7 @@ const HouseCard = ({ data, onClick }) => {
     price,
     salePrice,
     category,
+    favorite,
   } = data;
   const url = attachments[0]?.imgPath;
   return (
@@ -70,7 +71,9 @@ const HouseCard = ({ data, onClick }) => {
           </Details.Item>
           <Details.Item row>
             <Icons.Resize />
-            <Icons.Heart />
+            <Icons.WrapperHeart favourite={favorite && String(favorite)}>
+              <Icons.Heart favourite={favorite && String(favorite)} />
+            </Icons.WrapperHeart>
           </Details.Item>
         </Details>
       </Footer>
