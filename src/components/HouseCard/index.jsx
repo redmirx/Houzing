@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Container,
   Content,
@@ -9,8 +9,8 @@ import {
   Footer,
 } from "./style";
 import noimg from "./../../assets/images/no-img.jpg";
-
-// url, title, address, bed, bath, garage, size prev props
+import { info, warning } from "./../../hooks/useMessage.jsx";
+import { PropertiesContext } from "./../../context/properties/index";
 const HouseCard = ({ data, onClick }) => {
   // console.log(data);
 
@@ -25,8 +25,33 @@ const HouseCard = ({ data, onClick }) => {
     salePrice,
     category,
     favorite,
+    id,
   } = data;
   const url = attachments[0]?.imgPath;
+  const [{ refetch }] = useContext(PropertiesContext);
+  const save = (event) => {
+    event.stopPropagation();
+    // console.log(id);
+    fetch(
+      `https://houzing-app.herokuapp.com/api/v1/houses/addFavourite/${id}?favourite=${!favorite}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        if (!favorite) res?.success && info("Added to favourites");
+        else {
+          res?.success && warning("Removed from favourites");
+        }
+        refetch && refetch();
+        // console.log(res, "res");
+      });
+  };
+
   return (
     <Container onClick={onClick}>
       <Image src={url !== "string" ? url : noimg} />
@@ -71,7 +96,10 @@ const HouseCard = ({ data, onClick }) => {
           </Details.Item>
           <Details.Item row>
             <Icons.Resize />
-            <Icons.WrapperHeart favourite={favorite && String(favorite)}>
+            <Icons.WrapperHeart
+              onClick={save}
+              favourite={favorite && String(favorite)}
+            >
               <Icons.Heart favourite={favorite && String(favorite)} />
             </Icons.WrapperHeart>
           </Details.Item>

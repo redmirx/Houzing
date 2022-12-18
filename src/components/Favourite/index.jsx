@@ -1,28 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Cards, Container, Title } from "./style";
 import HouseCard from "./../HouseCard";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useQuery } from "react-query";
+import { PropertiesContext } from "../../context/properties";
 const { REACT_APP_BASE_URL: url } = process.env;
 
 const Favourite = () => {
-  const [data, setData] = useState([]);
   const { search } = useLocation();
   const navigate = useNavigate();
-  // console.log(url);
-  useEffect(() => {
-    fetch(`${url}/houses/getAll/favouriteList`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+  const [, dispatch] = useContext(PropertiesContext);
+  const { refetch, data } = useQuery(
+    [search],
+    async () => {
+      return await fetch(`${url}/houses/getAll/favouriteList`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }).then((res) => res.json());
+    },
+    {
+      onSuccess: (res) => {
+        // console.log(res)
+        dispatch({ type: "refetch", payload: refetch });
       },
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        // console.log(res);
-        setData(res?.data || []);
-      });
-  }, [search]);
-
-  // search variable is not needed
+    }
+  );
 
   const onSelect = (id) => {
     navigate(`/properties/${id}`);
@@ -36,8 +39,8 @@ const Favourite = () => {
         </div>
       </Title>
       <Cards>
-        {data.length ? (
-          data.map((value) => (
+        {data?.data.length ? (
+          data?.data.map((value) => (
             <HouseCard
               onClick={() => onSelect(value.id)}
               key={value.id}

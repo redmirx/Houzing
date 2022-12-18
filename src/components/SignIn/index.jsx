@@ -4,20 +4,7 @@ import Input from "./../Generics/Input";
 import Button from "./../Generics/Button";
 import { useRequest } from "./../../hooks/useRequest";
 import { useNavigate } from "react-router-dom";
-import { message } from "antd";
-
-const success = () => {
-  message.open({
-    type: "success",
-    content: "Successfully logged in",
-  });
-};
-const warning = (error) => {
-  message.open({
-    type: "warning",
-    content: error || "Something went wrong",
-  });
-};
+import { success, warning } from "./../../hooks/useMessage.jsx";
 
 const SignIn = () => {
   const request = useRequest();
@@ -34,9 +21,9 @@ const SignIn = () => {
         if (res?.authenticationToken) {
           localStorage.setItem("token", res?.authenticationToken);
           navigate("/home");
-          success();
+          success("Successfully logged in");
         } else {
-          warning(); // This only works, when the email is missing the @ symbol
+          warning("Something went wrong"); // This only works, when the email is missing the @ symbol
         }
       }
     );
