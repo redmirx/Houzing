@@ -4,10 +4,8 @@ const common = css`
   font-style: normal;
   font-weight: 600;
 `;
-
 const Content = styled.div`
   width: 58rem;
-  height: 37.6rem;
   padding: 2.4rem 3rem;
   background-color: #fff;
   border: 1px solid #e6e9ec;

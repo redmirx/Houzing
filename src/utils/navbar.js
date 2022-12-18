@@ -1,12 +1,12 @@
-// import useUniqueID from "./../hooks/useID.jsx";
 import { React, lazy, Suspense } from "react";
 import { Loading } from "./style";
 
 // Static import
 // import { HomePage } from "./../pages/Home";
 // import {PropertiesPage} from "./../pages/Properties";
-import { SignInPage } from "./../pages/SignIn";
-
+import { RegisterPage } from "./../pages/Register";
+import { MyProfilePage } from "./../pages/MyProfile";
+import { MyPropertiesPage } from "./../pages/MyProperties";
 // Dynamic import
 const HomePage = lazy(() => import("./../pages/Home"));
 const PropertiesPage = lazy(() => import("./../pages/Properties"));
@@ -66,18 +66,26 @@ export const navbar = [
   },
   {
     id: 5,
-    element: <SignInPage />,
-    title: "Sign In",
-    path: "/signin",
+    element: <RegisterPage />,
+    title: "Register",
+    path: "/register",
     private: false,
     hidden: true,
   },
   {
     id: 6,
-    element: <h1>Sign Up</h1>,
-    title: "Sign Up",
-    path: "/signup",
-    private: false,
+    element: <MyProfilePage />,
+    title: "My profile",
+    path: "/my-profile",
+    private: true,
+    hidden: true,
+  },
+  {
+    id: 7,
+    element: <MyPropertiesPage />,
+    title: "My properties",
+    path: "/my-properties",
+    private: true,
     hidden: true,
   },
 ];

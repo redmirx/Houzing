@@ -3,42 +3,62 @@ import { Content } from "./style";
 import Input from "./../Generics/Input";
 import Button from "./../Generics/Button";
 import { useRequest } from "./../../hooks/useRequest";
-import { useNavigate } from "react-router-dom";
 import { success, warning } from "./../../hooks/useMessage.jsx";
 
-const SignIn = () => {
+const SignUp = () => {
   const request = useRequest();
   const [body, setBody] = useState({});
-  const navigate = useNavigate();
 
   const onChange = ({ target: { name, value } }) => {
     setBody({ ...body, [name]: value });
   };
 
   const onSubmit = () => {
-    request({ me: true, url: "/public/auth/login", method: "POST", body }).then(
-      (res) => {
-        if (res?.authenticationToken) {
-          localStorage.setItem("token", res?.authenticationToken);
-          navigate("/home");
-          success("Successfully logged in");
-        } else {
-          warning("Something went wrong"); // This only works, when the email is missing the @ symbol
-        }
+    request({
+      me: true,
+      url: "/public/auth/register",
+      method: "POST",
+      body,
+    }).then((res) => {
+      if (
+        res["Email.regUserDto.email"] !== "must be a well-formed email address"
+      ) {
+        success("Registration Successfull. Please check your email!");
+        window.location.reload();
+      } else {
+        warning("Something went wrong");
       }
-    );
+    });
   };
 
   return (
     <Content>
-      <Content.Title>Sign in</Content.Title>
+      <Content.Title>Sign up</Content.Title>
       <div>
-        <Content.SubTitle>Login</Content.SubTitle>
+        <Content.SubTitle>Email</Content.SubTitle>
         <Input
           onChange={onChange}
           placeholder="Email"
           name="email"
           type="email"
+        />
+      </div>
+      <div>
+        <Content.SubTitle>First name</Content.SubTitle>
+        <Input
+          onChange={onChange}
+          placeholder="First name"
+          name="first-name"
+          type="text"
+        />
+      </div>
+      <div>
+        <Content.SubTitle>Last name</Content.SubTitle>
+        <Input
+          onChange={onChange}
+          placeholder="Last name"
+          name="last-name"
+          type="text"
         />
       </div>
       <div>
@@ -57,4 +77,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
