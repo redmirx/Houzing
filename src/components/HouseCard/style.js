@@ -121,6 +121,12 @@ Icons.WrapperHeart = styled.div`
   border-radius: 50%;
   cursor: pointer;
   background-color: ${({ favourite }) => (favourite ? "#CC5040" : "#f6f8f9")};
+  :hover {
+    background-color: #cc5040;
+    & path {
+      fill: #fff;
+    }
+  }
   :active {
     transform: scale(0.9);
   }
