@@ -12,6 +12,7 @@ import {
   Seller,
   Client,
   UserImg,
+  Features,
   Map,
 } from "./style";
 import noUser from "./../../assets/images/noUser.jpeg";
@@ -20,6 +21,8 @@ import { Checkbox } from "antd";
 import Yandex from "./../Generics/Yandex";
 import RecentRents from "./../RecentRents/index";
 import ImageGallery from "./../ImageGallery";
+import { info, warning } from "./../../hooks/useMessage.jsx";
+
 const HouseItem = () => {
   const [data, setData] = useState();
   const params = useParams();
@@ -30,6 +33,28 @@ const HouseItem = () => {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params?.id]);
+
+  const favorite = false;
+  const save = () => {
+    fetch(
+      `https://houzing-app.herokuapp.com/api/v1/houses/addFavourite/${
+        params?.id
+      }?favourite=${!favorite}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        if (!favorite) res?.success && info("Added to favourites");
+        else {
+          res?.success && warning("Removed from favourites");
+        }
+      });
+  };
 
   return (
     <Container>
@@ -48,7 +73,7 @@ const HouseItem = () => {
                 <Icons.Share />
               </Icons>
               <div className="info">Share</div>
-              <Icons>
+              <Icons onClick={save} like="true">
                 <Icons.Favorite />
               </Icons>
               <div className="info">Save</div>
@@ -104,11 +129,79 @@ const HouseItem = () => {
               <div className="info">{data?.description}</div>
             </Content>
           </Section>
-          {/* <Section>
-        <Content flex="column" gap={1.6}>
-          <Content.SubTitle>Documents</Content.SubTitle>
-        </Content>
-      </Section> */}
+          <Section flex="column" style={{ paddingTop: "4.8rem" }}>
+            <Content flex="column" gap={1.6}>
+              <Content.SubTitle>Features</Content.SubTitle>
+            </Content>
+            <Features>
+              <Features.Item>
+                <Icons.AirConditioner />
+                <div className="info">Air Conditioning</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Grass />
+                <div className="info">Lawn</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Refrigerator />
+                <div className="info">Refrigerator</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.LiquidSoap />
+                <div className="info">Washer</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Barbecue />
+                <div className="info">Barbeque</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Laundry />
+                <div className="info">Laundry</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Sauna />
+                <div className="info">Sauna</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Wifi />
+                <div className="info">WiFi</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Dryer />
+                <div className="info">Dryer</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Microwave />
+                <div className="info">Microwave</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Swimmer />
+                <div className="info">Swimming Pool</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Blinds />
+                <div className="info">Window Coverings</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Dumbbell />
+                <div className="info">Gym</div>
+              </Features.Item>
+
+              <Features.Item>
+                <Icons.OutdoorShower />
+                <div className="info">Outdoor Shower</div>
+              </Features.Item>
+
+              <Features.Item>
+                <Icons.Coaxial />
+                <div className="info">TV Cable</div>
+              </Features.Item>
+              <Features.Item>
+                <Icons.Chair />
+                <div className="info">Dining room</div>
+              </Features.Item>
+            </Features>
+          </Section>
         </Seller>
         <Client>
           <Content gap={1}>

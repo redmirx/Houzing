@@ -9,6 +9,7 @@ import {
   Footer,
 } from "./style";
 import noimg from "./../../assets/images/no-img.jpg";
+import noUser from "./../../assets/images/noUser.jpeg";
 import { info, warning } from "./../../hooks/useMessage.jsx";
 import { PropertiesContext } from "./../../context/properties/index";
 const HouseCard = ({ data, onClick }) => {
@@ -54,7 +55,12 @@ const HouseCard = ({ data, onClick }) => {
 
   return (
     <Container onClick={onClick}>
+      <button className="btn btn--light">featured</button>
+      <button className="btn btn--dark">for sale</button>
       <Image src={url !== "string" ? url : noimg} />
+      <Image.Wrapper>
+        <Image.User src={noUser} alt="" />
+      </Image.Wrapper>
       <Content>
         <Address>
           <div className="subTitle inline">

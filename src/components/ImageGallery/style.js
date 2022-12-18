@@ -4,9 +4,7 @@ const Container = styled.div`
   max-width: 144rem;
   width: 100%;
   min-height: 40rem;
-  /* height: 100%; */
   padding: var(--padding);
-  background-color: orange;
   display: flex;
   gap: 2rem;
 `;
