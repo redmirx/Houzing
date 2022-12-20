@@ -48,7 +48,7 @@ const SignUp = () => {
         <Input
           onChange={onChange}
           placeholder="First name"
-          name="first-name"
+          name="firstname"
           type="text"
         />
       </div>
@@ -57,7 +57,7 @@ const SignUp = () => {
         <Input
           onChange={onChange}
           placeholder="Last name"
-          name="last-name"
+          name="lastname"
           type="text"
         />
       </div>
